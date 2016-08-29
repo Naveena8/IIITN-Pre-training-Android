@@ -2,7 +2,7 @@ class  Person()
 {
 String name;
 String address;
-person(String name,String address)
+void person(String name,String address)
 {
 this.name=name;
 this.address=address;
@@ -33,7 +33,7 @@ public class Person implements Student()
 	String program;
 	int year;
 	double fee;
-	Student(String name,String address,String program,int year,double fee)
+	void Student(String name,String address,String program,int year,double fee)
 	{
 	super(name,address);
 	this.program=program;
@@ -75,7 +75,7 @@ public class Person implements Staff()
 {
 	String school;
 	double pay;
-	Staff(String name,String address,String school,double pay){
+	void Staff(String name,String address,String school,double pay){
 		super(name,address);
 		this.school=school;
 		this.pay=pay;
@@ -105,9 +105,9 @@ public class Test()
 	{
 public static void main(string[] args)
 {
- 	Person a=new Person(“sita”,”Hyderabad”);
+ 	Person a=new Person("sita","Hyderabad");
 	Student b=new Student("Raghu","Sullurpet","ECE",5000);
-	Staff c=new Staff(“Akshay","Nellore","JNVKP",10000);
+	Staff c=new Staff("Akshay","Nellore","JNVKP",10000);
 	System.out.println(a.getName());
 	System.out.println(a.getAddress());
 	a.setAddress("delhi");
