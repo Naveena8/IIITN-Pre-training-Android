@@ -1,0 +1,155 @@
+abstract class Shape{
+String color;
+boolean filled;
+public void Shape(String color,boolean filled)
+{
+	this.color=color;
+	this.filled=filled;
+}
+public String getcolor(){
+	return color;
+}
+public void setcolor(){
+	this.color=color;
+}
+public boolean isFilled(){
+	return filled;
+}
+public void isFilled(){
+	this.filled=filled;
+}
+public abstract double getArea();
+public abstract double getPerimeter();
+public abstract String tostring();
+ 
+ class Circle extends Shape{
+	double radius;
+public void Circle(){
+}
+public void Circle(double radius){
+	this.radius=radius;
+}
+public void Circle(double radius,String color,boolean filled)
+{
+	super(color,filled);
+	this.radius=radius;
+}
+public double getradius(){
+	return radius;
+}
+public void setradius(double radius)
+{
+	this.radius=radius;
+}
+public double getArea(){
+	return 3.14*radius*radius;
+}
+public double getPerimeter(){
+	return  2*3.14*radius;
+ 
+}
+public String tostring(){
+	return "\n color: "+color+"\n filled: "+filled+"Radius: "+radius+ "\narea: "+(3.14*radius*radius)+"\nPerimeter"+(3.14*2*radius);
+}
+}
+ class Rectangle extends Shape{
+	double width;
+	double length;
+public void Rectangle(){
+	System.out.println("Rectangle ");
+}
+public void Rectangle(double width,double length){
+	this.length=length;
+	this.width=width;
+}
+public void Rectangle(double width,double length,String color,boolean filled){
+	super(color,filled);
+	this.width=width;
+	this.length=length;
+}
+public double getwidth(){
+	return width;
+}
+public void setwidth(){
+	this.width=width;
+}
+public double getlength(){
+	return length;
+}
+public void setlength(){
+	this.length=length;
+}
+double getArea(){
+	return length*width;
+}
+double getPerimeter(){
+	return 2*(length+width);
+}
+public String tostring(){
+	return "Rectangle \n length" +length+"\nWidth:" +width+ "\nArea:" +(length*width)+ "Perimeter:" +(2*(length+width))  ;
+}
+}
+public class Square extends Rectangle{
+	double side;
+public void square(){
+	System.out.println("Square");
+}
+public void Square(double side){
+	this.side=side;
+}
+public void Square(double side,String color,boolean filled){
+	super(color,filled);
+	this.side=side;
+}
+public double getside(){
+	return side;
+}
+public void setside(double side){
+	this.side=side;
+}
+public void setwidth(double side){
+	this.width=side;
+}
+public void setlength(double side){
+	this.length=side;
+}
+public String tostring(){
+	return "Square side" +side+"\nArea: " +(side*side)+ "\nPerimeter:" +(4*side) ;
+}
+}
+}
+public class Test{
+	public static void main(String[] args){
+	System.out.println("\n Circle Details");
+	Circle a=new Circle();
+	Circle a1=new Circle(2);
+	System.out.println("radius:",a1.getradius());
+	a1.setradius(2);
+	Circle a2=new Circle(2,"orange",false);
+	System.out.println("\n Area:",a2.getArea());
+	System.out.println("\n Perimeter:",a2.getPerimeter());
+	System.out.println(a2.tostring());
+ 
+	System.out.println("\n Rectangular Details");
+	Rectangle b=new Rectangle();	
+	Rectangle b1=new Rectangle(2,3);
+	Rectangle b2=new Rectangle(3,2,"orange",true);
+	System.out.println("\n Length: ",b2.getlength());
+	a1.setlength(2);
+	System.out.println("\n Width: ",b2.getwidth());
+	a1.setwidth(3);
+	System.out.println("\n Area: ",b2.getArea());
+	System.out.println("\n Perimeter: ",b2.getPerimeter());
+	System.out.println("\n Length: ",b2.tostring());
+ 
+	System.out.println("\n Square Details");
+	Square c=new Square();
+	Square c1=new Square(4);
+	Square c2=new Square(4,"orange",true);
+	System.out.println("\n Side: ",c2.getside());
+	c2.setside(4);
+	c2.setlength(4);
+	c2.setwidth(4);
+	System.out.println( c2.tostring());	
+	}
+}
